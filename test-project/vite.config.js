@@ -20,5 +20,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
+  },
+  // 确保正确解析Vue文件
+  optimizeDeps: {
+    include: ['vue', 'ant-design-vue']
   }
 })

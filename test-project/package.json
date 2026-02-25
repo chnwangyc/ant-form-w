@@ -19,8 +19,9 @@
   "type": "module",
   "dependencies": {
     "ant-design-vue": "^4.2.6",
+    "ant-form-w": "file:../",
     "vue": "^3.5.29",
-    "ant-form-w": "file:../"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

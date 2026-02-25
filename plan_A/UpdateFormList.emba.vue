@@ -969,12 +969,12 @@ import { message, Modal } from 'ant-design-vue';
 import moment from 'moment';
 import { reactive, ref, onUnmounted, toRefs, nextTick } from 'vue';
 import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
-import judge from '../../common/js/judge';
+import judge from '../../../tsinghua/sycamore-admission-client/src/common/js/judge';
 // import provinceCities from '@/utils/cascader-address-options';
 import countryOptions from '@/utils/cascader-country-options';
 import { LOCATION_OPTIONS_EE_PFMP_QUICKAPPLY } from '@/utils/career-options';
 import { nationalityOptions, ethnicityOptions } from '@/utils/cascader-nationality-options';
-import ReceiverAccount from './modules/receiver-account';
+import ReceiverAccount from '../../../tsinghua/sycamore-admission-client/src/views/FormList/modules/receiver-account.vue';
 import { useI18n } from 'vue-i18n';
 import { debounce } from 'lodash';
 
