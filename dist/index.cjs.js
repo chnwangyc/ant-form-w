@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("vue"),s=(e,o)=>{const t=e.__vccOpts||e;for(const[c,n]of o)t[c]=n;return t},_={},u={class:"custom-form-wrapper"};function i(e,o){return r.openBlock(),r.createElementBlock("div",u," 这里是自定义表单 ")}const a=s(_,[["render",i]]),m="1.0.0";exports.CustomForm=a;exports.version=m;

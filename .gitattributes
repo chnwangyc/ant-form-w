@@ -1,0 +1,59 @@
+# 设置默认行为
+* text=auto
+
+# 文本文件 - 统一换行符为 LF
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.vue text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.less text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# 脚本文件 - 保留可执行权限
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+# 配置文件
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.npmrc text eol=lf
+.yarnrc text eol=lf
+.prettierrc text eol=lf
+.eslintrc text eol=lf
+.babelrc text eol=lf
+
+# 二进制文件 - 不转换换行符
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+
+# 文档文件
+README* text eol=lf
+CHANGELOG* text eol=lf
+CONTRIBUTING* text eol=lf
+LICENSE* text eol=lf
+
+# Windows 批处理文件
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 强制某些文件不被合并
+package-lock.json merge=ours
+yarn.lock merge=ours
+pnpm-lock.yaml merge=ours
