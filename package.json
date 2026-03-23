@@ -1,6 +1,6 @@
 {
   "name": "ant-form-w",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "基于Vue3和ant-design-vue的自定义表单组件库，提供易用的表单封装组件",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
