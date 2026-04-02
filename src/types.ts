@@ -19,8 +19,6 @@ export interface BaseFormProps {
   layout?: 'horizontal' | 'vertical' | 'inline';
   /** 标签对齐方式 */
   labelAlign?: 'left' | 'right';
-  /** 是否显示冒号 */
-  colon?: boolean;
   /** 标签宽度 */
   labelCol?: { span: number; offset?: number } | number;
   /** 内容宽度 */
@@ -75,8 +73,6 @@ export interface CustomFormProps extends BaseFormProps {
   gutter?: any[];
   /** 表单尺寸 */
   size?: 'small' | 'middle' | 'large';
-  /** 是否显示冒号 */
-  colon?: boolean;
   /** 每行显示列数 */
   span?: number;
   /** 按钮样式配置 */
@@ -182,8 +178,6 @@ export interface FormConfigOptions {
   gutter?: any[];
   /** 表单尺寸 */
   size?: 'small' | 'middle' | 'large';
-  /** 是否显示冒号 */
-  colon?: boolean;
   /** 每行显示列数 */
   span?: number;
   /** 按钮样式配置 */
@@ -245,4 +239,8 @@ export interface FieldCreateOptions {
   validator?: (value: any, rule: any) => Promise<void> | void;
   /** 字段变化回调 */
   onChange?: (value: any) => void;
+  /** 标签列配置 */
+  labelCol?: { span: number };
+  /** 内容列配置 */
+  wrapperCol?: { span: number };
 }

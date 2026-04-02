@@ -11,9 +11,7 @@
       :model="formData"
       :rules="mergedRules"
       :layout="config.layout || layout"
-      :label-col="config.labelCol || labelCol"
-      :wrapper-col="config.wrapperCol || wrapperCol"
-      :colon="config.colon ?? colon"
+      :colon="false"
       :size="config.size || size"
       :scrollToFirstError="true"
       v-bind="config.formProps"
@@ -126,7 +124,6 @@ const props = withDefaults(defineProps<CustomFormProps>(), {
   showSubmitButton: true,
   submitText: '提交',
   loading: false,
-  colon: true,
   size: 'middle',
   span: 3,
   gutter: () => [10, { xs: 0, sm: 0, md: 0, lg: 0 }],

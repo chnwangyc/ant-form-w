@@ -125,6 +125,10 @@ export interface FormItemConfig extends FormItemProps {
   onBlur?: (value: any, field: FormItemConfig) => void;
   /** 字段聚焦回调 */
   onFocus?: (value: any, field: FormItemConfig) => void;
+  /** 标签列配置 */
+  labelCol?: { span: number };
+  /** 内容列配置 */
+  wrapperCol?: { span: number };
 }
 
 /**

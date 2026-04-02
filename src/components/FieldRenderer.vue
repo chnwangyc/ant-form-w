@@ -9,8 +9,8 @@
     <a-form-item
       :name="field.key"
       :rules="fieldRules"
-      :label-col="labelColConfig"
-      :wrapper-col="wrapperColConfig"
+      :label-col="{ span: labelColConfig }"
+      :wrapper-col="{ span: wrapperColConfig }"
       :class="['field-renderer-item', { 'mb-0': true }]"
       :help="field.help || undefined"
       :validate-status="validateStatus"
@@ -20,7 +20,7 @@
     <template v-if="showLabel" #label>
       <b v-if="field.active" class="update-form-list-label-active">*</b>
       <span :class="labelPaddingClass">{{ t(field.label) }}</span>
-      <span v-if="showColon">:</span>
+      <span v-if="hasColonInLabel">:</span>
     </template>
 
     <!-- extra 插槽 -->
@@ -374,9 +374,10 @@ const labelPaddingClass = computed(() => {
   return formContext?.config?.size === 'large' ? 'pt-5' : '';
 });
 
-// 是否显示冒号
-const showColon = computed(() => {
-  return formContext?.config?.colon !== false;
+// label 是否包含冒号
+const hasColonInLabel = computed(() => {
+  const label = t(props.field.label);
+  return label.includes('：') || label.includes(':');
 });
 
 // 字段规则
@@ -404,17 +405,33 @@ const fieldRules = computed(() => {
 // labelCol 配置
 const labelColConfig = computed(() => {
   if (props.field.type === 'blockslot') {
-    return { span: 0 };
+    return 0;
   }
-  return formContext?.config?.labelCol || { span: 6 };
+  // 优先使用字段级别的 labelCol 配置
+  if (props.field.labelCol) {
+    return props.field.labelCol.span;
+  }
+  // 使用表单全局配置
+  if (formContext?.config?.labelCol) {
+    return formContext.config.labelCol.span;
+  }
+  return 6;
 });
 
 // wrapperCol 配置
 const wrapperColConfig = computed(() => {
   if (props.field.type === 'blockslot') {
-    return { span: 24 };
+    return 24;
   }
-  return formContext?.config?.wrapperCol || { span: 13 };
+  // 优先使用字段级别的 wrapperCol 配置
+  if (props.field.wrapperCol) {
+    return props.field.wrapperCol.span;
+  }
+  // 使用表单全局配置
+  if (formContext?.config?.wrapperCol) {
+    return formContext.config.wrapperCol.span;
+  }
+  return 13;
 });
 
 // extra 内容的 VNode

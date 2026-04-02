@@ -397,24 +397,34 @@ export function createContactForm(): FormConfig {
       required: true,
       active: true,
       placeholder: '请输入您的姓名',
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
     })
     .addTextField('mobile', 'EMBA.form.Mobile', {
       required: true,
       active: true,
       placeholder: '请输入手机号码',
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
     })
     .addTextField('email', 'EMBA.form.Email', {
       required: true,
       active: true,
       placeholder: '请输入电子邮箱',
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
     })
     .addCascaderField('address', 'EMBA.form.Address', [], {
       placeholder: '请选择地址',
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
     })
     .addTextareaField('message', 'EMBA.form.Message', {
       placeholder: '请输入留言内容',
       data: { maxLength: 500 },
       showCount: true,
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
     })
     .setButtonStyle({
       onSubmit: '提交联系信息',
@@ -438,11 +448,15 @@ export function createLoginForm(): FormConfig {
       required: true,
       placeholder: '请输入用户名或手机号',
       block: true,
+      labelCol: { span: 0 },
+      wrapperCol: { span: 24 },
     })
     .addPasswordField('password', 'EMBA.form.Password', {
       required: true,
       placeholder: '请输入密码',
       block: true,
+      labelCol: { span: 0 },
+      wrapperCol: { span: 24 },
     })
     .addInputGroupField('captcha', 'EMBA.form.Captcha', [
       createField({
@@ -450,15 +464,21 @@ export function createLoginForm(): FormConfig {
         key: 'code',
         label: '验证码',
         placeholder: '请输入验证码',
-        data: { style: 'flex: 1' },
+        data: { style: { flex: 1 } },
+        labelCol: { span: 0 },
+        wrapperCol: { span: 24 },
       }),
       createField({
         type: FormFieldType.SLOT,
         key: 'captchaImage',
         label: '验证码图片',
+        labelCol: { span: 0 },
+        wrapperCol: { span: 24 },
       }),
     ], {
       block: true,
+      labelCol: { span: 0 },
+      wrapperCol: { span: 24 },
     })
     .setButtonStyle({
       onSubmit: '登录',
