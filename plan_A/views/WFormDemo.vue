@@ -27,6 +27,11 @@
           </a-form-item>
         </a-col>
         <a-col :span="8">
+          <a-form-item label="bordered">
+            <a-switch v-model:checked="bordered" />
+          </a-form-item>
+        </a-col>
+        <a-col :span="8">
           <a-form-item label="labelCol span">
             <a-input-number
               v-model:value="labelColSpan"

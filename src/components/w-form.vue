@@ -11,15 +11,13 @@
           <a-row
             :gutter="[10, 10]"
             :wrap="false"
-            class="w-form-row"
+            :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" class="w-label-class"
-              >Fail{{ labelCol }}</a-col
-            >
-            <a-col :span="wrapperCol" class="w-content-class"
+            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''">Fail</a-col>
+            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''"
               ><a-form-item validate-status="error">
-                <!-- <template #label>Fail</template> -->
+                <template #label v-if="!bordered">Fail</template>
                 <template #extra>extra</template>
                 <template #help
                   >Should be combination of numbers & alphabets</template
@@ -35,12 +33,13 @@
           <a-row
             :gutter="[10, 10]"
             :wrap="false"
-            class="w-form-row"
+            :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" class="w-label-class">Warning</a-col>
-            <a-col :span="wrapperCol" class="w-content-class">
+            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''">Warning</a-col>
+            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''">
               <a-form-item validate-status="warning">
+                <template #label v-if="!bordered">Warning</template>
                 <a-input id="warning" placeholder="Warning"> </a-input>
               </a-form-item>
             </a-col>
@@ -50,21 +49,22 @@
           <a-row
             :gutter="[10, 10]"
             :wrap="false"
-            class="w-form-row"
+            :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" class="w-label-class"
+            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''"
               >Validating{{ labelCol }}</a-col
             >
-            <a-col :span="wrapperCol" class="w-content-class">
+            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''">
               <a-form-item
                 has-feedback
                 validate-status="validating"
                 help="The information is being validated..."
               >
+                <template #label v-if="!bordered">Validating</template>
                 <a-input
                   id="validating"
-                  placeholder="I'm the content is being validated"
+                  placeholder="I'm content is being validated"
                 />
               </a-form-item>
             </a-col>
@@ -109,9 +109,7 @@ const props = withDefaults(defineProps<WFormProps>(), {
 </script>
 <style lang="less">
 .w-border-box {
-  //   border-top: 1px solid #bb133e;
   .w-form-row {
-    // border-bottom: 1px solid #f1f1f1;
     position: relative;
     &::after {
       content: "";
