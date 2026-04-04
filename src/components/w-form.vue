@@ -14,9 +14,20 @@
             :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''">Fail</a-col>
-            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''"
-              ><a-form-item validate-status="error">
+            <a-col
+              v-if="bordered"
+              :span="labelCol"
+              :class="bordered ? 'w-label-class' : ''"
+              >Fail</a-col
+            >
+            <a-col
+              :span="bordered ? wrapperCol : 24"
+              :class="bordered ? 'w-content-class' : ''"
+              ><a-form-item
+                validate-status="error"
+                :label-col="{ span: labelCol }"
+                :wrapper-col="{ span: wrapperCol }"
+              >
                 <template #label v-if="!bordered">Fail</template>
                 <template #extra>extra</template>
                 <template #help
@@ -36,9 +47,21 @@
             :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''">Warning</a-col>
-            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''">
-              <a-form-item validate-status="warning">
+            <a-col
+              v-if="bordered"
+              :span="labelCol"
+              :class="bordered ? 'w-label-class' : ''"
+              >Warning</a-col
+            >
+            <a-col
+              :span="bordered ? wrapperCol : 24"
+              :class="bordered ? 'w-content-class' : ''"
+            >
+              <a-form-item
+                validate-status="warning"
+                :label-col="{ span: labelCol }"
+                :wrapper-col="{ span: wrapperCol }"
+              >
                 <template #label v-if="!bordered">Warning</template>
                 <a-input id="warning" placeholder="Warning"> </a-input>
               </a-form-item>
@@ -52,14 +75,22 @@
             :class="bordered ? 'w-form-row' : ''"
             style="height: 100%"
           >
-            <a-col :span="labelCol" :class="bordered ? 'w-label-class' : ''"
+            <a-col
+              v-if="bordered"
+              :span="labelCol"
+              :class="bordered ? 'w-label-class' : ''"
               >Validating{{ labelCol }}</a-col
             >
-            <a-col :span="wrapperCol" :class="bordered ? 'w-content-class' : ''">
+            <a-col
+              :span="bordered ? wrapperCol : 24"
+              :class="bordered ? 'w-content-class' : ''"
+            >
               <a-form-item
                 has-feedback
                 validate-status="validating"
                 help="The information is being validated..."
+                :label-col="{ span: labelCol }"
+                :wrapper-col="{ span: wrapperCol }"
               >
                 <template #label v-if="!bordered">Validating</template>
                 <a-input
