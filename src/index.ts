@@ -1,5 +1,6 @@
 // 导出组件
 export { default as CustomForm } from './components/CustomForm.vue';
+export { default as WForm } from './components/w-form.vue';
 export { default as FieldRenderer } from './components/FieldRenderer.vue';
 export { default as ChildFieldRenderer } from './components/ChildFieldRenderer.vue';
 
